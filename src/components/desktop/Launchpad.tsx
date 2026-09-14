@@ -78,7 +78,7 @@ export function Launchpad({
   return (
     <div
       className={cn(
-        "fixed inset-0 z-[60] flex flex-col items-center bg-black/40 backdrop-blur-2xl transition-opacity duration-200",
+        "fixed inset-0 z-[60] flex flex-col items-center bg-black/75 transition-opacity duration-200",
         shown ? "opacity-100" : "opacity-0",
       )}
       onClick={(e) => { if (e.target === e.currentTarget) onOpenChange(false); }}
@@ -92,7 +92,7 @@ export function Launchpad({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search"
-            className="w-full rounded-xl border border-white/20 bg-white/10 py-2 ps-9 pe-3 text-center text-sm text-white placeholder:text-white/60 outline-none backdrop-blur-md focus:border-white/40"
+            className="w-full rounded-md border border-white/20 bg-white/10 py-2 ps-9 pe-3 text-center text-sm text-white placeholder:text-white/60 outline-none focus:border-white/40"
           />
         </div>
       </div>
@@ -113,13 +113,13 @@ export function Launchpad({
                 <button
                   type="button"
                   onClick={() => launch(app.slug)}
-                  className="group flex select-none flex-col items-center gap-2 rounded-2xl p-2 outline-none transition hover:scale-105 focus-visible:scale-105"
+                  className="group flex select-none flex-col items-center gap-2 p-2 outline-none transition"
                 >
                   <span
-                    className="flex h-16 w-16 items-center justify-center rounded-[22px] text-white shadow-lg ring-1 ring-inset ring-white/25"
-                    style={{ backgroundImage: `linear-gradient(160deg, ${app.color || "#64748b"}, ${app.color || "#64748b"}bb)` }}
+                    className="flex h-16 w-16 items-center justify-center rounded-md text-white ring-1 ring-inset ring-white/25"
+                    style={{ backgroundColor: `${app.color || "#64748b"}` }}
                   >
-                    <span className="drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
+                    <span>
                       <DynamicIcon name={app.icon} size={32} />
                     </span>
                   </span>

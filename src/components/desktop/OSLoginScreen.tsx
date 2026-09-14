@@ -102,7 +102,7 @@ function LiveClock({ ar }: { ar: boolean }) {
   const dateStr = now.toLocaleDateString(locale, { weekday: "long", month: "long", day: "numeric" });
 
   return (
-    <div className="flex flex-col items-center text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.55)]">
+    <div className="flex flex-col items-center text-white">
       <div className="mb-1 text-sm font-medium uppercase tracking-[0.2em] text-white/70">
         {greeting(hh, ar)}
       </div>
@@ -155,7 +155,7 @@ export function OSLoginScreen({
   if (lockedUser) {
     return (
       <div className={cn("fixed inset-0 flex items-center justify-center", className)} style={{ background }} dir={dir}>
-        <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" aria-hidden="true" />
+        <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
         <div className="relative z-10">
           {lockedUser.usePassword && onUnlockPassword ? (
             <PasswordLockScreen
@@ -221,10 +221,10 @@ export function OSLoginScreen({
       dir={dir}
     >
       {/* Legibility scrim + subtle vignette over the wallpaper image. */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-black/60" aria-hidden="true" />
+      <div className="absolute inset-0 bg-black/30" aria-hidden="true" />
       <div
         className="absolute inset-0"
-        style={{ background: "radial-gradient(120% 80% at 50% 30%, transparent 40%, rgba(0,0,0,0.45) 100%)" }}
+        style={{ background: "rgba(0,0,0,0.25)" }}
         aria-hidden="true"
       />
 
@@ -232,9 +232,9 @@ export function OSLoginScreen({
       <div className="relative z-10 flex w-full max-w-sm flex-col items-center gap-8 px-6">
         <LiveClock ar={ar} />
 
-        <div className="w-full rounded-3xl border border-white/20 bg-white/10 p-7 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.6)] backdrop-blur-2xl">
+        <div className="w-full border border-white/20 bg-black/55 p-7">
           <div className="flex flex-col items-center gap-3 text-center text-white">
-            <div className="flex h-[68px] w-[68px] items-center justify-center rounded-full border border-white/30 bg-gradient-to-br from-white/25 to-white/5 text-white shadow-inner ring-1 ring-white/10">
+            <div className="flex h-[68px] w-[68px] items-center justify-center rounded-full border border-white/30 bg-white/25 text-white ring-1 ring-white/10">
               {crest}
             </div>
             <div>
@@ -289,7 +289,7 @@ export function OSLoginScreen({
             <Button
               type="submit"
               disabled={busy}
-              className="w-full gap-2 bg-white font-semibold text-slate-900 shadow-lg transition hover:bg-white/90"
+              className="w-full gap-2 bg-white font-semibold text-slate-900 transition hover:bg-white/90"
             >
               {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <ArrowRight className="h-4 w-4 rtl:rotate-180" />}
               {busy ? (ar ? "جارٍ تسجيل الدخول…" : "Signing in…") : (ar ? "تسجيل الدخول" : "Sign in")}
@@ -327,7 +327,7 @@ export function OSLoginScreen({
             key={i}
             type="button"
             tabIndex={-1}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white/70 backdrop-blur-md transition hover:bg-white/20 hover:text-white"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white/70 transition hover:bg-white/20 hover:text-white"
           >
             <Icon className="h-4 w-4" />
           </button>

@@ -55,10 +55,10 @@ const DockButton = React.forwardRef<HTMLButtonElement, DockButtonProps>(
         {/* Solid squircle so the icon reads clearly on ANY wallpaper (macOS style):
             a color gradient fill, a white icon, an inset highlight ring. */}
         <span
-          className="flex h-11 w-11 items-center justify-center rounded-[14px] text-white shadow-md ring-1 ring-inset ring-white/25 transition-shadow group-hover:shadow-xl"
-          style={{ backgroundImage: `linear-gradient(160deg, ${base}, ${base}bb)` }}
+          className="flex h-11 w-11 items-center justify-center rounded-md text-white ring-1 ring-inset ring-white/25 transition-colors"
+          style={{ backgroundColor: `${base}` }}
         >
-          <span className="drop-shadow-[0_1px_1px_rgba(0,0,0,0.35)]">{children}</span>
+          <span>{children}</span>
         </span>
         <span className={cn("mt-1 h-1 w-1 rounded-full bg-white/90 transition-opacity", isOpen ? "opacity-100" : "opacity-0")} />
       </button>
@@ -83,7 +83,7 @@ export function Dock({ apps, pinned, openSlugs = [], onLaunch, onCloseApp, onUnp
 
   return (
     <div className={cn("pointer-events-none fixed inset-x-0 bottom-3 z-40 flex justify-center px-2", className)}>
-      <div className="no-scrollbar pointer-events-auto flex max-w-full items-end gap-1.5 overflow-x-auto rounded-2xl border border-white/15 bg-black/25 px-2.5 py-2 shadow-2xl backdrop-blur-2xl">
+      <div className="no-scrollbar pointer-events-auto flex max-w-full items-end gap-1.5 overflow-x-auto border border-white/15 bg-black/60 px-2.5 py-2">
         {onLaunchpad && (
           <>
             <DockButton label="Launchpad" color="#6366f1" onClick={onLaunchpad}>

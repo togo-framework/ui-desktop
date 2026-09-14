@@ -224,7 +224,7 @@ export function Window({
         const r = snapRect(snapHint);
         return (
           <div
-            className="pointer-events-none fixed rounded-xl border-2 border-primary/70 bg-primary/15 backdrop-blur-sm transition-all duration-100"
+            className="pointer-events-none fixed border-2 border-primary/70 bg-primary/15 transition-all duration-100"
             style={{ left: r.x, top: r.y, width: r.w, height: r.h, zIndex: zIndex - 1 }}
             aria-hidden="true"
           />
@@ -239,8 +239,8 @@ export function Window({
       {snapPreview}
     <div
       className={cn(
-        "fixed flex flex-col overflow-hidden border border-border bg-card/95 shadow-2xl backdrop-blur-xl",
-        isMobile ? "rounded-none" : "rounded-xl",
+        "fixed flex flex-col overflow-hidden border border-border bg-card",
+        isMobile ? "rounded-none" : "rounded-none",
         "origin-bottom transition-[opacity,transform] duration-200 ease-out",
         minimized
           ? "pointer-events-none translate-y-[45vh] scale-50 opacity-0"
