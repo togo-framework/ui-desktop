@@ -266,7 +266,7 @@ export function Window({
             type="button"
             aria-label="Close"
             onClick={onClose}
-            className="flex h-3 w-3 items-center justify-center rounded-full bg-[#ff5f57] text-[#7a0d02] transition hover:brightness-95"
+            className="flex h-3 w-3 items-center justify-center rounded-sm bg-destructive text-destructive-foreground transition-colors hover:bg-destructive/85"
           >
             <X className="h-2 w-2 opacity-0 transition-opacity group-hover/lights:opacity-100" strokeWidth={3} />
           </button>
@@ -274,7 +274,7 @@ export function Window({
             type="button"
             aria-label="Minimize"
             onClick={onMinimize}
-            className="flex h-3 w-3 items-center justify-center rounded-full bg-[#febc2e] text-[#985712] transition hover:brightness-95"
+            className="flex h-3 w-3 items-center justify-center rounded-sm bg-warning text-background transition-colors hover:bg-warning/85"
           >
             <Minus className="h-2 w-2 opacity-0 transition-opacity group-hover/lights:opacity-100" strokeWidth={3} />
           </button>
@@ -282,7 +282,7 @@ export function Window({
             type="button"
             aria-label="Maximize"
             onClick={onMaximizeToggle}
-            className="flex h-3 w-3 items-center justify-center rounded-full bg-[#28c840] text-[#0b6118] transition hover:brightness-95"
+            className="flex h-3 w-3 items-center justify-center rounded-sm bg-success text-background transition-colors hover:bg-success/85"
           >
             <Plus className="h-2 w-2 opacity-0 transition-opacity group-hover/lights:opacity-100" strokeWidth={3} />
           </button>
